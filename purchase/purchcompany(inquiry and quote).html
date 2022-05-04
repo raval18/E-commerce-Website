@@ -1,0 +1,261 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../base.css">
+<title>Purchase Company(I and Q)</title>
+<style>
+    
+    section{
+        width: 100%;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+
+    .box-iq{
+        margin-top: 180px;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+        place-items: center;
+        gap: 30px;
+        padding: 40px;
+    }     
+
+    .row-iq{
+        padding: 20px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 100%;
+        place-items: center start;
+    }
+
+    .row-iq h3{
+        font-size: 2rem;
+        color: var(--primary);
+        padding-left: 40%;
+    }
+    .first-1 h3{
+        padding-left: 10%;
+    }
+
+    input, select, textarea{
+        width: 100%;
+        height: 100%;
+        padding: 10px 30px;
+        border: 4px solid var(--secondary);
+        border-radius: 50px;
+        background-color: var(--secondary);
+        outline: none;
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: var(--primary);
+        transition: 0.6s all var(--easeInOutQuad);
+        resize: none;
+    }
+    textarea{
+        width: 100%;
+        border-radius: 30px;
+        height: 150px;
+    }
+    input::placeholder, textarea::placeholder{
+        color: var(--primary);
+    }
+
+    input:focus,
+    select:focus{   
+        color: white;
+        border: 4px solid transparent;
+        box-shadow: inset 25px 25px 65px #0e192b, 
+            inset -25px -25px 65px #20375d;
+    }
+    .adding-logo-iq{
+        width: 60px;
+        height: 60px;
+        justify-self: center;
+        display: grid;
+        place-items: center;
+    }
+    .adding-logo-iq button{
+        border-radius: 50%;
+        background-color: #E53961;
+        border: 0.5rem solid #E53961;
+        outline: none;
+        font-size: 3rem;
+    }
+    .extra-charges,
+    .final{
+        background-color: var(--secondary);
+        width: 100%;
+        border-radius: 2.5rem 2.5rem 0 0;
+    }
+    .extra-charges input,
+    .final textarea,
+    .final input{
+        background-color: var(--primary);
+        color: var(--secondary);
+        
+    }
+    .extra-charges h3{
+        color: var(--primary);
+    }
+    .extra-charges h2,
+    .final h3{
+        color: var(--highlight-two);
+    }
+    .extra-charges input::placeholder,
+    .final textarea::placeholder,
+    .final input::placeholder{
+        color: var(--secondary);
+    }
+    .submit-iq{
+        background-color: #E53961;
+        border: 0.5rem solid #E53961;
+        outline: none;
+        border-radius: 2rem;
+        padding: 10px;
+        font-size: 2rem;
+    }
+    @media only screen and (max-width:1000px){
+        .row-iq h3{
+            padding-left: 20%;
+            font-size: 1.8rem;
+        }
+        .first-1 h3{
+            padding-left: 5%;
+        }
+    }
+    @media only screen and (max-width:500px){
+        .box-iq{
+            padding: 10px;
+        }
+        .row-iq{
+            grid-template-columns: 45% 55%;
+        }
+        .row-iq h3{
+            font-size: 1.3rem;
+            padding-left: 5%;
+        }
+        .first-1{
+            width: 100%;
+        }
+        .first-1 h3{
+            padding-left: 0%;
+        }
+        input, select, textarea{
+            font-size: 0.8rem;
+            padding: 10px 15px;            
+        }
+        .adding-logo-iq{
+            width: 45px;
+            height: 45px;
+        }
+        .submit-iq{
+            font-size: 1.3rem;
+        }
+    }
+</style>
+</head>
+<body>
+        <header>  
+            <div class="logo">
+                <img src="../assets/logo.svg" alt="logo of Upasana"/>
+                <h3>Upasana Metals</h3>
+            </div>
+            <div class="menu">
+                <div id="one"></div>
+                <div id="two"></div>
+            </div>            
+        </header>
+        <div id="menu">
+            <a class="inactive" href="../home.html">Home</a>
+            <a class="inactive" href="../industries.html">Industries we serve</a>
+            <a class="active" href="../about us.html">About us</a>
+            <a class="inactive">Contact us</a>
+            <a class="inactive">Register</a>
+        </div>  
+        <div class="title">
+            <h1> &CircleDot; Inquiry and Quotation</h1>
+        </div>
+        <section>
+            <div class="box-iq first">
+                <div class="row-iq">
+                    <h3>Metal</h3>
+                    <select>
+                        <option value="Iron">Iron</option>
+                        <option value="Stainless steel">Stainless steel</option>
+                        <option value="Brass">Brass</option>
+                        <option value="Copper">Copper</option>
+                    </select>
+                </div>
+                <div class="row-iq">
+                    <h3>Rate</h3>
+                    <input type="number" name="rate-input" placeholder="Rate of Metal">
+                </div>
+                <div class="row-iq">
+                    <h3>Size</h3>
+                    <input type="number" name="rate-input" placeholder="Available Size">
+                </div>
+            </div>    
+            <div class="box-iq extra-charges">
+                <h2>&#x26AC; Extra Charges</h2>
+                <div class="row-iq">
+                    <h3>Cutting</h3>
+                    <input type="number" name="cutting" placeholder="Enter Amount">
+                </div>
+                <div class="row-iq adding">
+                   <h3>Loading</h3>
+                    <input type="number"class="loading-input" name="loading" placeholder="Enter Amount">
+                </div>
+                <button class="adding-logo-iq">&#43</button>
+            </div>
+        </section>
+
+        <section>
+            <div class="box-iq first-1">
+                <div class="row-iq">
+                    <h3>Payment terms</h3>
+                    <select>
+                        <option>Opt 1</option>
+                        <option>Opt 1</option>
+                    </select>
+                </div>
+                <div class="row-iq">
+                    <h3>Delivery terms</h3>
+                    <select>
+                        <option>Opt 1</option>
+                        <option>Opt 1</option>
+                    </select>
+                </div>                
+            </div>
+            <div class="box-iq final">
+                <h3 class="title-iq">&#x26AC; Final Quotation</h3>
+                <textarea class="quot-details-iq" rows="3" cols="15" placeholder="Enter Quote"></textarea>
+                <input type="number" name="amount" placeholder="Enter Amount" placeholder="Rupees">
+                <button type="submit" name="submit" class="submit-iq">Submit</button>
+            </div>            
+        </section>
+        <footer>
+            <h5>© 2016 Upasana Metals</h5>
+        </footer>
+        <script src="../src/base.js"></script>
+        <script defer>
+            const button = document.querySelector('.adding-logo');
+            const row = document.querySelector('.extra-charges');
+            
+            function clickeffect(){
+                const div = document.createElement('div');
+                div.classList.add('row');
+                const input = `
+                    <input type="text" placeholder = "Enter Charge">
+                    <input type="number" placeholder = "Enter Amount">`;
+                div.innerHTML = input;    
+                row.appendChild(div);            
+            }
+            button.addEventListener('click', clickeffect);            
+        </script>
+    </body>
+</html>
